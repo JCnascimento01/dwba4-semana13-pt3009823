@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>IFSP - Campus Pirituba</title>        
+  </head>
+  <body>
+    <section>
+      <div>
+        <h1>IFSP - Campus Pirituba</h1>        
+        <form action="/" method="POST">          
+          <div>            
+            <ul>
+                <li>
+                    <label for="contato-nome">Nome</label>
+                    <input type="text" name="nome" id="contato-nome" required/>
+                </li>
+              <br>              
+                <li>
+                    <label for="contato-email">E-Mail</label>
+                    <input type="email" name="email" id="contato-email" required/>
+                </li>  
+              <br>
+              <li>
+                    <label for="contato-telefone">Telefone (99) 99999-9999</label>
+                    <input type="text" name="telefone" id="contato-telefone" required/>
+                </li>
+            </ul>            
+            <input type="submit" value="Salvar" name="save" />            
+          </div>
+        </form>
+        <form action="/limparBanco" method='POST'>              
+              <input type='submit' value='Eliminar registros' name='delete' />
+        </form>          
+        <br>  
+        <table border='1'>
+          <tr>
+              <th>Nome</th><th>E-mail</th>
+          </tr>
+          {% for value in contatos %}                        
+            <tr>
+              <td>{{contatos[value]['nome'] }}</td><td>{{value}}</td>
+            </tr>  
+          {% endfor %}                      
+        </table>       
+          
+      </div>
+    </section>
+  </body>
+</html>
